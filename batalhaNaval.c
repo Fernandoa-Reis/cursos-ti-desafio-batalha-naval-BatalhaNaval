@@ -38,3 +38,27 @@ int main() {
             return 1;
         }
     }
+
+      // Posiciona navio horizontal
+    for (int i = 0; i < TAMANHO_NAVIO; i++) {
+        tabuleiro[linha_h][coluna_h + i] = 1; // Valor 1 representa navio
+    }
+    
+    // Posiciona navio vertical
+    for (int i = 0; i < TAMANHO_NAVIO; i++) {
+        tabuleiro[linha_v + i][coluna_v] = 1; // Valor 1 representa navio
+    }
+
+    // Exibe coordenadas dos navios
+    printf("Coordenadas do Navio Horizontal:\n");
+    for (int i = 0; i < TAMANHO_NAVIO; i++) {
+        printf("(%d, %d) ", linha_h, coluna_h + i);
+    }
+    
+    printf("\n\nCoordenadas do Navio Vertical:\n");
+    for (int i = 0; i < TAMANHO_NAVIO; i++) {
+        printf("(%d, %d) ", linha_v + i, coluna_v);
+    }
+    
+    return 0;
+}
