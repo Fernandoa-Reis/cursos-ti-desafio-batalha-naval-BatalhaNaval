@@ -11,3 +11,9 @@ int main() {
             tabuleiro[i][j] = 0;
         }
     }
+
+    // Coordenadas dos navios (definidas manualmente)
+    // Navio horizontal: linha 2, coluna inicial 3
+    int linha_h = 2, coluna_h = 3;
+    // Navio vertical: linha inicial 4, coluna 5
+    int linha_v = 4, coluna_v = 5;
