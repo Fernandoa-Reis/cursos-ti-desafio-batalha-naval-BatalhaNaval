@@ -29,3 +29,12 @@ int main() {
         printf("Erro: Navio vertical ultrapassa o limite do tabuleiro\n");
         return 1;
     } 
+
+    // Valida sobreposição
+    for (int i = 0; i < TAMANHO_NAVIO; i++) {
+        if (tabuleiro[linha_h][coluna_h + i] != 0 ||
+            tabuleiro[linha_v + i][coluna_v] != 0) {
+            printf("Erro: Navios se sobrepoem\n");
+            return 1;
+        }
+    }
