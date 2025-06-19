@@ -23,3 +23,9 @@ int main() {
         printf("Erro: Navio horizontal ultrapassa o limite do tabuleiro\n");
         return 1;
     }
+
+    // Valida posição do navio vertical
+    if (linha_v + TAMANHO_NAVIO > TAMANHO_TABULEIRO) {
+        printf("Erro: Navio vertical ultrapassa o limite do tabuleiro\n");
+        return 1;
+    } 
