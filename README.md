@@ -1,4 +1,5 @@
-#Batalha Naval - Nível Novato (Tabuleiro 10x10)
+Batalha Naval - Nível Novato (Tabuleiro 10x10)
+##############################################
 Este documento detalha a implementação do nível novato do jogo Batalha Naval com um tabuleiro 10x10 em linguagem C.
 
 Visão Geral
