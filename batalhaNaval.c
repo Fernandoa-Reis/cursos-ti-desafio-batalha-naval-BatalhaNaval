@@ -17,3 +17,9 @@ int main() {
     int linha_h = 2, coluna_h = 3;
     // Navio vertical: linha inicial 4, coluna 5
     int linha_v = 4, coluna_v = 5;
+
+    // Valida posição do navio horizontal
+    if (coluna_h + TAMANHO_NAVIO > TAMANHO_TABULEIRO) {
+        printf("Erro: Navio horizontal ultrapassa o limite do tabuleiro\n");
+        return 1;
+    }
