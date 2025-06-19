@@ -1,103 +1,68 @@
-# ⚠️ Importante!!!
-Você pode escolher qualquer um dos desafios para desenvolver. Sinta-se à vontade para começar pelo desafio que mais lhe interessa.
+#Batalha Naval - Nível Novato (Tabuleiro 10x10)
+Este documento detalha a implementação do nível novato do jogo Batalha Naval com um tabuleiro 10x10 em linguagem C.
 
-# Desafio Batalha Naval - Três Níveis de Complexidade
+Visão Geral
+O programa implementa a lógica básica de posicionamento de navios em um tabuleiro 10x10:
 
-Bem-vindo ao desafio "Batalha Naval"! Este projeto desafiará suas habilidades de programação utilizando vetores e matrizes para simular um jogo de Batalha Naval, dividido em três níveis: Novato, Aventureiro e Mestre. Em cada nível, novas funcionalidades serão adicionadas, tornando o desafio progressivamente mais complexo.
+Dois navios são posicionados: um horizontal e um vertical
 
-## 🏅 Nível Novato
+Cada navio ocupa 3 posições consecutivas
 
-Neste nível inicial, você implementará a lógica básica de posicionamento de navios em um tabuleiro de Batalha Naval utilizando vetores bidimensionais.
+As coordenadas são definidas diretamente no código
 
-### 🚩 Objetivos:
-- **Posicionamento dos Navios:** O sistema deve simular a localização de dois navios no tabuleiro, um posicionado verticalmente e outro horizontalmente.
-- **Utilização de Vetores:** Os navios serão posicionados utilizando vetores bidimensionais, com coordenadas X e Y.
-- **Exibição de Coordenadas:** O sistema deve exibir as coordenadas de cada parte dos navios no console utilizando `printf`.
+O programa exibe as coordenadas dos navios e o tabuleiro completo
 
-### 📥 Entrada de Dados:
-- Os valores serão inseridos manualmente por meio de variáveis no código.
+Explicação do Código
+1. Inicialização do Tabuleiro
+Cria uma matriz 10x10
+Inicializa todas as posições com 0 (representando água)
 
-### 📤 Saída de Dados:
-- Após o posicionamento, o sistema deve exibir as coordenadas dos navios de forma clara e organizada.
+2. Definição das Coordenadas
+Navio horizontal começa na posição (2,3)
+Navio vertical começa na posição (4,5)
+Cada navio ocupa 3 posições consecutivas
 
----
+3. Validações
+Garante que os navios estejam dentro dos limites do tabuleiro
+Verifica se os navios não se sobrepõem
 
-## 🏅 Nível Aventureiro
+4. Posicionamento dos Navios
+Atribui o valor 3 às posições ocupadas pelos navios
+Navio horizontal: mesma linha, colunas consecutivas
+Navio vertical: mesma coluna, linhas consecutivas
 
-No nível Aventureiro, você expandirá o tabuleiro e adicionará mais navios, incluindo posicionamentos na diagonal.
+5. Exibição das Coordenadas
+Lista as coordenadas de cada parte do navio horizontal
+Lista as coordenadas de cada parte do navio vertical
 
-### 🆕 Diferença em relação ao Nível Novato:
-- **Tabuleiro 10x10:** O tabuleiro será expandido para uma matriz 10x10.
-- **Posicionamento de Quatro Navios:** O sistema deverá posicionar quatro navios, incluindo dois na diagonal.
-- **Exibição Completa do Tabuleiro:** O sistema exibirá toda a matriz, onde 0 indica uma posição sem navio e 3 indica uma posição ocupada.
+6. Exibição do Tabuleiro
+Exibe a matriz 10x10 formatada
+Mostra 0 para água e 3 para posições com navios
 
-### 🚩 Novas Funcionalidades:
-- **Matriz 10x10:** Implementação de uma matriz maior para representar o tabuleiro.
-- **Posicionamento de Navios na Diagonal:** Adição de navios posicionados diagonalmente.
-- **Exibição do Tabuleiro Completo:** O sistema mostrará o tabuleiro completo, indicando as posições ocupadas e livres.
+###Saída Esperada###
+Coordenadas do Navio Horizontal:
+(2, 3) (2, 4) (2, 5) 
 
----
+Coordenadas do Navio Vertical:
+(4, 5) (5, 5) (6, 5) 
 
-## 🏅 Nível Mestre
-
-No nível Mestre, o desafio se intensifica com a implementação de habilidades especiais representadas por matrizes específicas no tabuleiro.
-
-### 🆕 Diferença em relação ao Nível Aventureiro:
-- **Habilidades Especiais:** O sistema deve definir áreas de habilidades utilizando matrizes com padrões específicos: cone, cruz e octaedro.
-- **Estruturas de Repetição Aninhadas:** Utilização de loops aninhados para percorrer e preencher as áreas afetadas pelas habilidades.
-
-### 🚩 Novas Funcionalidades:
-- **Matrizes de Habilidades:** Implementação de três matrizes para representar habilidades especiais no tabuleiro.
-- **Padrões de Habilidade:** Criação de padrões específicos (cone, cruz, octaedro) para definir as áreas afetadas.
-- **Exibição das Áreas Atingidas:** O sistema exibirá o tabuleiro com as áreas afetadas, utilizando 0 para áreas não afetadas e 1 para áreas afetadas.
-
-### Exemplo de Saída:
-
-Exemplo e comando:
-printf("%d ",matriz[i][j]);
-
-### Exemplo de saída de habilidade em cone:
-
-0 0 1 0 0
-
-0 1 1 1 0
-
-1 1 1 1 1
-
-### Exemplo de saída de habilidade em octaedro:
-
-0 0 1 0 0
-
-0 1 1 1 0
-
-0 0 1 0 0
-
-### Exemplo de saída de habilidade em cruz:
-
-0 0 1 0 0
-
-1 1 1 1 1
-
-0 0 1 0 0
+Tabuleiro de Batalha Naval:
+0 0 0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 0 0 
+0 0 0 3 3 3 0 0 0 0 
+0 0 0 0 0 0 0 0 0 0 
+0 0 0 0 0 3 0 0 0 0 
+0 0 0 0 0 3 0 0 0 0 
+0 0 0 0 0 3 0 0 0 0 
+0 0 0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 0 0 
 
 
 
 
+###Validações Implementadas###
+Verificação de limites do tabuleiro para ambos os navios
+Detecção de sobreposição entre navios
+Mensagens de erro específicas para cada tipo de problema
 
----
-
-## 📋 Requisitos Funcionais Comuns
-- **Entrada de Dados:** Os valores serão inseridos manualmente por meio de variáveis no código.
-- **Utilização de Matrizes:** Os dados devem ser estruturados de maneira eficiente utilizando matrizes.
-- **Exibição de Resultados:** Os resultados devem ser exibidos de forma clara e organizada.
-
-## 📌 Requisitos Não Funcionais Comuns
-- **Performance:** O sistema deve executar operações de forma eficiente, sem atrasos perceptíveis.
-- **Documentação:** O código deve ser bem documentado, com comentários claros sobre a função de cada parte do código.
-- **Manutenibilidade:** O código deve ser organizado e fácil de entender, facilitando futuras manutenções e expansões.
-
----
-
-Boa sorte no desenvolvimento deste desafio! Aproveite para aprimorar suas habilidades em vetores e matrizes enquanto progride pelos níveis.
-
-Equipe de Ensino - MateCheck
